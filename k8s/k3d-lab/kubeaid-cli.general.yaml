@@ -1,0 +1,34 @@
+git:
+  sshUsername: git
+  useSSHAgent: false
+  privateKeyFilePath: /home/vitamax/.ssh/id_rsa
+
+forkURLs:
+  kubeaid:
+    url: https://github.com/Obmondo/KubeAid.git
+    version: 31.1.1
+  kubeaidConfig:
+    url: git@github.com:vitamaxoduol/kubeaid-config-lab.git
+    directory: 
+
+cluster:
+  type: workload
+  name: k3d-lab
+  k8sVersion: v1.35.6
+  enableAuditLogging: false
+  apiServer:
+    extraArgs: {}
+    extraVolumes: []
+    files: []
+  argoCD:
+    deployKeys:
+      kubeaidConfig:
+        privateKeyFilePath: /home/vitamax/.ssh/id_rsa
+
+kubePrometheus:
+  version: v0.18.0
+
+cloud:
+  local: {}
+
+
